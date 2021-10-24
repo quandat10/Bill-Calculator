@@ -27,7 +27,7 @@ export const NewItemForm = ({ onSubmit }) => {
     <Box marginBottom="space80">
       <form onSubmit={handleSubmit}>
         <Box marginBottom="space80">
-          <Label htmlFor="item-name">Item Name</Label>
+          <Label htmlFor="item-name">Tên sản phẩm</Label>
           <Input
             id="item-name"
             type="text"
@@ -36,21 +36,21 @@ export const NewItemForm = ({ onSubmit }) => {
           />
         </Box>
         <Box marginBottom="space80">
-          <Label htmlFor="item-price">Price</Label>
+          <Label htmlFor="item-price">Giá</Label>
           <Input
             id="item-price"
             type="number"
-            insertBefore={<div>$</div>}
+            insertBefore={<div>VNĐ</div>}
             value={price}
             onChange={(event) => setPrice(event.target.value)}
           />
         </Box>
         <Box marginBottom="space80">
-          <Label htmlFor="item-price">Quantity</Label>
+          <Label htmlFor="item-price">Số lượng</Label>
           <Input
             id="item-price"
             type="number"
-            insertBefore={<div></div>}
+            insertBefore={<div>Cái</div>}
             value={quantity}
             onChange={(event) => setQuantity(event.target.value)}
           />
@@ -62,11 +62,10 @@ export const NewItemForm = ({ onSubmit }) => {
           fullWidth
           variant="primary"
         >
-          🍳 Add Item
+          🍳 Thêm vào đơn
         </Button>
       </form>
     </Box>
   );
 };
 
-export default NewItemForm;

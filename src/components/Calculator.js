@@ -15,8 +15,11 @@ const Calculator = () => {
     <Card>
       <NewItemformContainer />
       <MenuItemsContainer />
-      <TipSelectContainer />
-      <SummaryContainer />
+      <p/>
+      <div className="total_bill">
+        <TipSelectContainer />
+        <SummaryContainer />
+      </div>
     </Card>
   );
 };

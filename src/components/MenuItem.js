@@ -27,32 +27,46 @@ export const MenuItem = (props) => {
       </Heading>
       <Flex>
         <Box padding="space20">
-          <Label htmlFor={`$item-${uuid}-price`}>Price</Label>
+          <Label htmlFor={`$item-${uuid}-price`}>Giá</Label>
           <Input
             id={`$item-${uuid}-price`}
-            insertBefore={<div>$</div>}
+            insertBefore={<div>VND</div>}
             value={price}
             type="number"
-            onChange={(event) => updatePrice(event.target.value)}
+            onChange={(event) => {
+              if (event.target.value === '') {
+                event.target.value = 0;
+                return updatePrice(0);
+              }
+              return updatePrice(event.target.value);
+            }}
           />
         </Box>
         <Box padding="space20">
-          <Label htmlFor={`$item-${uuid}-quantity`}>Quantity</Label>
+          <Label htmlFor={`$item-${uuid}-quantity`}>Số lượng</Label>
           <Input
             id={`$item-${uuid}-quantity`}
             value={quantity}
             type="number"
-            onChange={(event) => updateQuantity(event.target.value)}
+            insertBefore={<div>Cái</div>}
+
+            onChange={(event) => {
+              if (event.target.value === '') {
+                event.target.value = 0;
+                return updateQuantity(0);
+              }
+              return updateQuantity(event.target.value);
+            }}
           />
         </Box>
         <Box padding="space20" textAlign="right" width="100%">
-          <Heading variant="heading50">Total</Heading>
+          <Heading variant="heading50">Tổng</Heading>
           {toCurrency(total)}
         </Box>
       </Flex>
       <Box width="100%" textAlign="right">
         <Button variant="destructive_secondary" size="small" onClick={remove}>
-          Remove
+          Xoá
         </Button>
       </Box>
     </Card>

@@ -12,3 +12,9 @@ main {
   margin: auto;
   width: 600px;
 }
+.total_bill{
+  background-color:rgba(221, 36, 98, 0.185);
+  padding:10px;
+  margin:0;
+  border-radius: 10px;
+}
